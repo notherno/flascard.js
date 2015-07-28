@@ -1,0 +1,71 @@
+// Main application
+extends template
+
+block content
+	#sidebar.columns.small-3
+		ul.side-nav
+			li.header= booktitle
+			- for (var i = 0; i < sections.length; i++) {
+			- 	var cls = (sectionid == i)?'active':'';
+				li(class= cls): a(href= path+bookid+'/'+i+'/0/')= sections[i].section
+			- }
+	// Main area
+	.columns.small-9
+		// Title
+		h1#cardtitle= sections[sectionid].section + ': ' + booktitle
+		// Progress bar
+		#progressindic= (index + 1) + '/' + sections[sectionid].content.length
+		.progress.round.clear
+			span.meter(style="width: "+ Math.ceil((index+1)/sections[sectionid].content.length*100) +'%')
+
+		// Card Area
+		#flashcard
+			div
+				.panel.question
+					dl
+						dt= name
+						dd!= question
+			div
+				.panel.answer.invisible
+					dl
+						dt= name
+						dd!= answer
+
+		// Functional Buttons
+		.button-navs
+			ul.center.button-group.round
+				// Back button
+				- if (index != 0) {
+					li: a.button(href= path+bookid+'/'+sectionid+'/'+(index - 1)+'/'): i.fi-arrow-left
+				- } else {
+					li: a.button.disabled: i.fi-arrow-left
+				- }
+				// section Back button
+				- if (sectionid != 0) {
+					li: a.button(href= path+bookid+'/'+(sectionid-1)+'/'+0+'/'): i.fi-previous
+				- } else {
+					li: a.button.disabled: i.fi-previous
+				- }
+				// Sound button
+				li: a#soundbutton.button: i.fi-play
+				// section Forward button
+				- if (sectionid != sections.length - 1) {
+					li: a.button(href= path+bookid+'/'+(sectionid+1)+'/'+0+'/'): i.fi-next
+				- } else {
+					li: a.button.disabled: i.fi-next
+				- }
+				// Forward button
+				- if (index != sections[sectionid].content.length - 1) {
+					li: a.button(href= path+bookid+'/'+sectionid+'/'+(index + 1)+'/'): i.fi-arrow-right
+				- } else {
+					li: a.button.disabled: i.fi-arrow-right
+				- }
+		.button-navs
+			ul.center.button-group.radius
+				li: a.small.button.secondary(href="#default") CANCEL
+				li: a.small.button.level1(href="#bad") BAD
+				li: a.small.button.level2(href="#soso") SOSO
+				li: a.small.button.level3(href="#great") GREAT
+
+		audio.question(src= "/sound"+qpath)
+		audio.answer(src= "/sound"+apath)

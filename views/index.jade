@@ -1,0 +1,50 @@
+// Main application
+extends template
+
+block content
+	#sidebar.columns.small-3
+		ul.side-nav
+			li.header DUO 3.0
+			li: a(href="#") Section
+			li.active: a(href="#") Section
+			li: a(href="#") Section
+			li: a(href="#") Section
+			li: a(href="#") Section
+			li: a(href="#") Section
+			li: a(href="#") Section
+			li: a(href="#") Section
+			li: a(href="#") Section
+			li: a(href="#") Section
+	// Main area
+	.columns.small-9
+		// Title
+		h1#display-state QUESTION
+		// Progress bar
+		.progress.round
+			span.meter(style="width: 34%")
+
+		// Card Area
+		#flashcard
+			div
+				.panel.question
+					dl
+						dt 001/560
+						dd 個人の意思は尊重しなければならない。
+			div
+				.panel.answer
+					dl
+						dt 001/560
+						dd We must respect the will of the individual.
+
+		// Functional Buttons
+		.button-bar
+			ul.button-group.radius
+				
+		#button-navs
+			ul#selfcheck.button-group.radius
+				li: a.small.button.level1(href="#bad") BAD
+				li: a.small.button.level2(href="#soso") SOSO
+				li: a.small.button.level3(href="#great") GREAT
+
+		audio.question(src="/sound/DUO/Section01/001.mp3")
+		audio.answer(src="/sound/DUO/Section01/001e.mp3")
