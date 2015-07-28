@@ -1,0 +1,112 @@
+
+body {
+	font-size: 20px;
+}
+
+#wrap {
+	margin-top: 3rem;
+}
+
+.clear {
+	clear: both;
+}
+
+#cardtitle {
+	font-size: 1.6rem;
+	font-weight: bold;
+	width: 50%;
+	float: left;
+}
+
+.invisible {
+	display: none;
+}
+
+#progressindic {
+	font-size: 1rem;
+	color: #666;
+	margin-top: 1rem;
+	float: right;
+}
+
+#sidebar {
+	padding: 0.6rem;
+}
+
+#sidebar > ul {
+	background-color: #FAFAFA;
+}
+
+.side-nav li.header {
+	background-color: #DDD;
+	padding: 0.6rem;
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+
+.side-nav li.active {
+	background-color: #EEF;
+}
+
+.panel.question {
+	color: #222;
+}
+
+.panel.answer {
+	color: #333;
+}
+
+#flashcard {
+	min-height: 14rem;
+	margin-bottom: 2rem;
+}
+
+#flashcard .panel {
+	box-shadow: 1px 4px 3px rgba(1,1,1, 0.3);
+	min-height: 14rem;
+}
+
+#flashcard .panel * {
+	font-size: 1.4rem;
+}
+
+.button-navs {
+	margin: 1rem;
+	position: relative;
+	overflow: hidden;
+}
+
+.button-group.center {
+	position: relative;
+	left: 50%;
+	float: left;
+}
+
+.button-group.center li {
+	position: relative;
+	left: -50%;
+}
+
+/* Button Colors */
+.button.level1 {
+	background-color: #E44C4C;
+}
+.button.level1:hover {
+	background-color: #AA3939;
+}
+
+.button.level2 {
+	background-color: #F3CC31;
+}
+.button.level2:hover {
+	background-color: #C7AB39;
+}
+
+.button.level3 {
+	background-color: #4998FF;
+}
+.button.level3:hover {
+	background-color: #3A74C0;
+}
+
+
